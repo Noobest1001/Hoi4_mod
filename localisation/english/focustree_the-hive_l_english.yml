@@ -1,0 +1,9 @@
+﻿l_english: 
+HIV_synthetic_resource_initiative:0 "Synthetic Resource initiative"
+HIV_synthetic_resource_initiative_desc:0 "[res, E, f3]"
+HIV_build_military_infrastructure:0 "Build military infrastructure"
+HIV_build_military_infrastructure_desc:0 "[M&C F, a{1}]"
+HIV_extend_the_factory_floors:0 "Extend the Factory Floors"
+HIV_extend_the_factory_floors_desc:0 "[M F {2}]"
+HIV_build_the_civilian_infrastructure:0 "Build the Civilian Infrastructure"
+HIV_build_the_civilian_infrastructure_desc:0 "2"

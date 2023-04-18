@@ -1,0 +1,113 @@
+ideas = {
+	economy = {
+
+		HIM_hive_mind_mass_industrialization = {
+			picture = HIM_hive_mind_mass_industrialization-15875
+			cancel = {
+				has_idea = Hive_Mind_Mass_Mobilization 
+
+
+			}
+		}
+
+		HIM_hive_mind_volunteerism = {
+			picture = HIM_hive_mind_volunteerism-15875
+			cost = 1
+			removal_cost = 1
+		}
+
+		HIM_hive_mind_recovery = {
+			picture = HIM_hive_mind_recovery-15875
+			allowed = {
+				has_government = hive_mind_
+
+casualties > 50000
+
+
+			}
+		}
+
+		HIM_hive_mind = {
+			picture = HIM_hive_mind-15875
+			cost = 1
+			removal_cost = 1
+		}
+
+	}
+	mobilization_laws = {
+
+		HIM_hive_mind_voluntarism_mobilization = {
+			picture = HIM_hive_mind_voluntarism_mobilization-1067
+			cost = 200
+			removal_cost = 200
+			allowed_civil_war = {
+				always = yes
+
+
+			}
+		}
+
+		HIM_hive_mind_mobilization = {
+			picture = HIM_hive_mind_mobilization-1062
+			cost = 200
+			removal_cost = 150
+			allowed_civil_war = {
+				always = yes
+
+
+			}
+			visible = {
+				has_government = hive_mind_
+
+
+			}
+		}
+
+		HIM_hive_mind_mass_mobilization = {
+			picture = HIM_hive_mind_mass_mobilization-15875
+			cancel = {
+				has_idea = Hive_Mind_Mass_Industry
+
+
+			}
+		}
+
+		HIM_hive_mind_mass_industrialization = {
+			picture = HIM_hive_mind_mass_industrialization-15849
+		}
+
+	}
+	political_advisor = {
+
+		HIM_the_right_mind = {
+			picture = HIM_the_right_mind-359612
+			cost = 11
+			removal_cost = 1
+		}
+
+		HIM_coetus_rebellium = {
+			picture = HIM_coetus_rebellium-183139
+			cost = 1
+			removal_cost = 1
+		}
+
+	}
+	trade_laws = {
+
+		HIM_hive_mindism = {
+			picture = HIM_hive_mindism-54649
+		}
+
+		HIM_hive_mind_collectivism = {
+			picture = HIM_hive_mind_collectivism-16075
+			cost = 1
+			removal_cost = 1
+		}
+
+		HIM_hive_mind_volunteerism = {
+			picture = HIM_hive_mind_volunteerism-77287
+			cost = 1
+			removal_cost = 1
+		}
+	}
+}

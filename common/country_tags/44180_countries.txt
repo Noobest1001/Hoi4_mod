@@ -1,0 +1,4 @@
+HIV = "countries/The Hive-Mind.txt"
+UEP = "countries/United Eastern Provence.txt"
+KLY = "countries/Republic of Lycojo.txt"
+KVR = "countries/Kingdom of Valirun.txt"

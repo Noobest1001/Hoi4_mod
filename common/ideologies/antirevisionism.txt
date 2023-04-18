@@ -1,0 +1,23 @@
+ideologies = {
+	antirevisionism = {
+		types = {
+			gVSEcbjQ = { can_be_randomly_selected = no }
+		}
+		dynamic_faction_names = {
+			"faction_antirevisionism_the_expansionist_block"
+			"faction_antirevisionism_the_anticapitalism_front"
+		}
+		color = { 237 0 22 }
+		faction_modifiers = {
+		}
+		rules = {
+			can_create_collaboration_government = yes
+			can_declare_war_on_same_ideology = yes
+			can_send_volunteers = yes
+			can_puppet = yes
+		}
+		modifiers = {
+		}
+		ai_neutral = yes
+	}
+}

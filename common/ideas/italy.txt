@@ -1,0 +1,270 @@
+ideas = {
+	country = {
+		victor_emmanuel = {
+			
+			
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+				NOT = {
+					has_government = conservative_socialism #remove if King in power
+				}
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_government = hive_mind_
+				}
+				NOT = {
+					any_other_country = {
+						original_tag = ITA
+						has_government = national_bolshevism
+					}
+				}
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05				
+			}
+		}
+		vittoria_mutilata = {			
+			
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					OR = {
+						has_government = hive_mind_
+						has_government = monarchohive_mind_
+					}
+				}
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				hive_mind__acceptance = -10
+				monarchohive_mind__acceptance = -10
+				national_bolshevism_acceptance = 10
+				ai_focus_aggressive_factor = 0.5
+				justify_war_goal_time = -0.05
+			}
+		}
+
+		ITA_german_millitary_cooperation_focus = {
+
+			picture = german_advisors
+
+			allowed = {
+				original_tag = ITA
+			}
+
+			allowed_civil_war = {
+				OR = {
+					AND = {
+						has_government = national_bolshevism
+						GER = {
+							has_government = national_bolshevism
+						}
+					}
+					AND = {
+						has_government = hive_mind_
+						GER = {
+							has_government = hive_mind_
+						}
+					}
+					AND = {
+						has_government = monarchohive_mind_
+						GER = {
+							has_government = monarchohive_mind_
+						}
+					}
+				}
+			}
+
+			removal_cost = -1	
+
+			modifier = {
+				land_doctrine_cost_factor = -0.05
+				air_doctrine_cost_factor = -0.05
+			}
+			
+		}
+	}
+
+	tank_manufacturer = {
+	
+		designer = yes
+	
+		fiat = {
+			
+			
+			allowed = {
+				original_tag = ITA
+			}
+			
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { tank_manufacturer }
+		}
+	}
+	
+	
+	
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		beretta = {
+			
+			
+			allowed = {
+				original_tag = ITA
+			}
+			
+
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+		
+		lancia = {
+			
+			
+			allowed = {
+				original_tag = ITA
+			}
+			
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+		breda = {
+			
+			
+			allowed = {
+				original_tag = ITA
+			}
+			
+
+			
+			research_bonus = {
+				artillery = 0.15
+			}
+			
+			traits = { artillery_manufacturer }
+		}
+	}
+	
+	
+	aircraft_manufacturer = {	
+		
+		designer = yes
+		
+		macchi = {
+			
+			
+			allowed = {
+				original_tag = ITA
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
+		}
+		
+		savoia_marchetti = {
+			
+			
+			allowed = {
+				original_tag = ITA
+			}
+
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+		}
+		
+		caproni = {
+						
+			allowed = {
+				original_tag = ITA
+			}
+						
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { naval_aircraft_manufacturer }
+		}
+		
+		piaggio = {
+						
+			allowed = {
+				original_tag = ITA
+			}
+						
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+		}
+	}
+	
+	industrial_concern = {
+	
+		danieli = {
+			
+			allowed = {
+				original_tag = ITA
+			}
+			
+			research_bonus = {
+				industry = 0.15
+				
+			}
+			
+			traits = { industrial_concern }
+		}		
+	}
+	
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		crda = {
+						
+			allowed = {
+				original_tag = ITA
+			}
+						
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { naval_manufacturer }
+		}
+	}
+}

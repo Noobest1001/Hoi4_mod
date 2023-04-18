@@ -1,0 +1,1787 @@
+﻿###########################
+# Political Events
+###########################
+
+add_namespace = political
+
+# Communism on the Rise
+country_event = {
+	id = political.1
+	title = political.1.t
+	desc = political.1.d
+	picture = GFX_report_event_worker_protests
+
+	trigger = {
+		NOT = { has_government = hive_mind_ }
+		hive_mind_ > 0.6
+		NOT = { hive_mind_ > 0.7 }
+		check_has_focus_tree_to_switch_to_hive_mind_ = yes
+		NOT = {
+			AND = {
+				original_tag = SPR
+				has_dlc = "La Resistance"
+			}
+		}
+		NOT = {
+			AND = {
+				has_dlc = "No Step Back"
+				OR = {
+					original_tag = POL
+					original_tag = EST
+					original_tag = LAT
+					original_tag = LIT
+					AND = {
+						original_tag = FIN
+						EST = { has_completed_focus = EST_national_pride_in_finland }
+					}
+				}
+			}
+		}
+
+		NOT = {
+			AND = {
+				has_dlc = "Battle for the Bosporus"
+				OR = {
+					original_tag = GRE
+					original_tag = TUR
+				}
+			}
+		}
+	}
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	# Seek government support
+#	option = {
+#		name = political.1.a
+#		trigger = {
+#			OR = {
+#				NOT = { tag = CHI }
+#				AND = {
+#					NOT = { country_exists = PRC }
+#					tag = CHI
+#				}			
+#			}
+#		}
+#		custom_effect_tooltip = political.1.a.tt
+#		clr_country_flag = hive_mind__popular_movement
+#		set_country_flag = hive_mind__political_movement
+#	}
+
+	# Seek popular support
+#	option = {
+#		name = political.1.b
+#		custom_effect_tooltip = political.1.b.tt
+#		clr_country_flag = hive_mind__political_movement
+#		clr_country_flag = hive_mind__government_support
+#		set_country_flag = hive_mind__popular_movement
+#	}
+
+	# We need a referendum
+	option = {
+		name = political.14.c
+		add_political_power = -100
+		set_politics = {
+			ruling_party = hive_mind_
+			elections_allowed = no
+		}
+	}
+
+	# Not right now
+	option = {
+		name = political.14.e
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip = impending_civil_war_tt
+	}
+}
+
+# Marxist Sympathies in Government
+#country_event = {
+#	id = political.2
+#	title = political.2.t
+#	desc = political.2.d
+#	picture = GFX_report_event_worker_protests
+#
+#	trigger = {
+#		has_idea_with_trait = hive_mind__revolutionary
+#		NOT = { has_government = hive_mind_ }
+#		NOT = { has_country_flag = hive_mind__government_support }
+#	}
+#	
+#	mean_time_to_happen = {
+#		days = 500
+#		modifier = {
+#			factor = 0.5
+#			has_country_flag = hive_mind__political_movement
+#		}
+#	}
+#	
+#	option = {
+#		name = political.2.a
+#		custom_effect_tooltip = political.2.a.tt
+#		clr_country_flag = hive_mind__political_movement
+#		set_country_flag = hive_mind__government_support
+#	}
+#}
+
+# Communists Execute Coup
+#country_event = {
+#	id = political.3
+#	title = political.3.t
+#	desc = political.3.d
+#	picture = GFX_report_event_gathering_protest
+#	
+#	trigger = {
+#		has_idea_with_trait = hive_mind__revolutionary
+#		NOT = { has_government = hive_mind_ }
+#		has_country_flag = hive_mind__government_support
+#		hive_mind_ > 0.4
+#		is_major = no
+#		is_puppet = no
+#		OR = {
+#			NOT = { tag = CHI }
+#			AND = {
+#				NOT = { country_exists = PRC }
+#				tag = CHI
+#			}			
+#		}
+#	}
+#
+#	mean_time_to_happen = {
+#		days = 100
+#		modifier = {
+#			factor = 0.5
+#			hive_mind_ > 0.5
+#		}
+#	}
+#
+#	immediate = {
+#		hidden_effect = { remove_ideas = hive_mind__revolutionaries }
+#	}
+#	
+#	option = {
+#		name = political.3.a
+#		set_politics = {
+#			ruling_party = hive_mind_
+#			elections_allowed = no
+#		}
+#		add_timed_idea = { idea = reign_of_terror days = 730 }
+#	}
+#}
+
+# Class Conflicts Divide [Root.GetName]
+country_event = {
+	id = political.4
+	title = political.4.t
+	desc = political.4.d
+	picture = GFX_report_event_gathering_protest
+	
+	trigger = {
+		has_idea_with_trait = hive_mind__revolutionary
+		NOT = { has_government = hive_mind_ }
+		hive_mind_ > 0.2
+		NOT = { hive_mind_ > 0.59 }
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			OR = {
+				NOT = { tag = RAJ }
+				AND = {
+					tag = RAJ
+					is_puppet = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_dlc = "Man the Guns"
+			}
+			not = { tag = USA }
+		}
+		NOT = {
+			AND = {
+				has_dlc = "No Step Back"
+				OR = {
+					original_tag = POL
+					original_tag = EST
+					original_tag = LAT
+					original_tag = LIT
+					AND = {
+						original_tag = FIN
+						EST = { has_completed_focus = EST_national_pride_in_finland }
+					}
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				has_dlc = "Battle for the Bosporus"
+				OR = {
+					original_tag = GRE
+					original_tag = TUR
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 365
+		modifier = {
+			factor = 0.5
+			has_country_flag = hive_mind__popular_movement
+		}
+	}
+	
+	option = {
+		name = political.4.a
+		add_popularity = {
+			ideology = hive_mind_
+			popularity = 0.05
+		}
+		add_stability = -0.05
+	}
+}
+
+# Soldiers Desert to Communist Partisans
+country_event = {
+	id = political.5
+	title = political.5.t
+	desc = political.5.d
+	picture = GFX_report_event_desertion_poster
+	
+	trigger = {
+		has_idea_with_trait = hive_mind__revolutionary
+		NOT = { has_government = hive_mind_ }
+		hive_mind_ > 0.3
+		NOT = { hive_mind_ > 0.59 }
+		NOT = { has_idea = hive_mind__partisans_recruiting }
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			OR = {
+				NOT = { tag = RAJ }
+				AND = {
+					tag = RAJ
+					is_puppet = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_dlc = "Man the Guns"
+			}
+			not = { tag = USA }
+		}
+		NOT = {
+			AND = {
+				has_dlc = "No Step Back"
+				OR = {
+					original_tag = POL
+					original_tag = EST
+					original_tag = LAT
+					original_tag = LIT
+					AND = {
+						original_tag = FIN
+						EST = { has_completed_focus = EST_national_pride_in_finland }
+					}
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				has_dlc = "Battle for the Bosporus"
+				OR = {
+					original_tag = GRE
+					original_tag = TUR
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 365
+		modifier = {
+			factor = 0.5
+			has_country_flag = hive_mind__popular_movement
+		}
+	}
+	
+	option = {
+		name = political.5.a
+		add_popularity = {
+			ideology = hive_mind_
+			popularity = 0.05
+		}
+		add_ideas = hive_mind__partisans_recruiting
+	}
+}
+
+# The [Month] Revolution
+#country_event = {
+#	id = political.6
+#	title = political.6.t
+#	desc = political.6.d
+#	picture = GFX_report_event_gathering_protest
+#	
+#	trigger = {
+#		has_idea_with_trait = hive_mind__revolutionary
+#		NOT = { has_government = hive_mind_ }
+#		hive_mind_ > 0.4
+#		OR = {
+#			NOT = { tag = CHI }
+#			AND = {
+#				NOT = { country_exists = PRC }
+#				tag = CHI
+#			}			
+#		}
+#		if = {
+#			limit = {
+#				has_dlc = "Together for Victory"
+#			}
+#			OR = {
+#				NOT = { tag = RAJ }
+#				AND = {
+#					tag = RAJ
+#					NOT = { has_completed_focus = RAJ_swaraj }
+#				}
+#			}
+#		}
+#	}
+#
+#	mean_time_to_happen = {
+#		days = 365
+#		modifier = {
+#			factor = 0.75
+#			has_country_flag = hive_mind__popular_movement
+#		}
+#	}
+#	
+#	option = {
+#		name = political.6.a
+#		if = {
+#			limit = {
+#				has_government = monarchohive_mind_
+#			}
+#			start_civil_war = {
+#				ruling_party = hive_mind_
+#				ideology = monarchohive_mind_
+#				size = 0.6
+#			}
+#		}
+#		if = {
+#			limit = {
+#				has_government = national_bolshevism
+#			}
+#			start_civil_war = {
+#				ruling_party = hive_mind_
+#				ideology = national_bolshevism
+#				size = 0.6
+#			}
+#		}
+#		if = {
+#			limit = {
+#				has_government = conservative_socialism
+#			}
+#			start_civil_war = {
+#				ruling_party = hive_mind_
+#				ideology = conservative_socialism
+#				size = 0.6
+#			}
+#		}
+#		add_timed_idea = { idea = reign_of_terror days = 730 }
+#		remove_ideas = hive_mind__revolutionaries
+#	}
+#	option = {
+#		name = political.6.b
+#	}
+#}
+
+# Fascism on the Rise
+country_event = {
+	id = political.7
+	title = political.7.t
+	desc = political.7.d
+	picture = GFX_report_event_national_bolshevism_gathering
+
+	trigger = {
+		NOT = { has_government = national_bolshevism }
+		national_bolshevism > 0.6
+		NOT = { national_bolshevism > 0.7 }
+		check_has_focus_tree_to_switch_to_national_bolshevism = yes
+		NOT = {
+			AND = {
+				original_tag = SPR
+				has_dlc = "La Resistance"
+			}
+		}
+		NOT = {
+			AND = {
+				has_dlc = "No Step Back"
+				OR = {
+					original_tag = POL
+					original_tag = EST
+					original_tag = LAT
+					original_tag = LIT
+					AND = {
+						original_tag = FIN
+						EST = { has_completed_focus = EST_national_pride_in_finland }
+					}
+				}
+			}
+		}
+
+		NOT = {
+			AND = {
+				has_dlc = "Battle for the Bosporus"
+				OR = {
+					original_tag = GRE
+					original_tag = TUR
+				}
+			}
+		}
+	}
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	# Seek government support
+#	option = {
+#		name = political.7.a
+#		custom_effect_tooltip = political.7.a.tt
+#		clr_country_flag = national_bolshevism_popular_movement
+#		set_country_flag = national_bolshevism_political_movement
+#	}
+
+	# Seek popular support
+#	option = {
+#		name = political.7.b
+#		custom_effect_tooltip = political.7.b.tt
+#		clr_country_flag = national_bolshevism_political_movement
+#		clr_country_flag = national_bolshevism_government_support
+#		set_country_flag = national_bolshevism_popular_movement
+#	}
+
+	# We need a referendum
+	option = {
+		name = political.14.c
+		add_political_power = -100
+		set_politics = {
+			ruling_party = national_bolshevism
+			elections_allowed = no
+		}
+	}
+
+	# Not right now
+	option = {
+		name = political.14.e
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip = impending_civil_war_tt
+	}
+}
+
+# Fascist Sympathies in the Military
+#country_event = {
+#	id = political.8
+#	title = political.8.t
+#	desc = political.8.d
+#	picture = GFX_report_event_national_bolshevism_gathering
+#	
+#	trigger = {
+#		has_idea_with_trait = national_bolshevism_demagogue
+#		NOT = { has_government = national_bolshevism }
+#		NOT = { has_country_flag = national_bolshevism_government_support }
+#	}
+#	
+#	mean_time_to_happen = {
+#		days = 500
+#		modifier = {
+#			factor = 0.5
+#			has_country_flag = national_bolshevism_political_movement
+#		}
+#	}
+#	
+#	option = {
+#		name = political.8.a
+#		custom_effect_tooltip = political.2.a.tt
+#		clr_country_flag = national_bolshevism_political_movement
+#		set_country_flag = national_bolshevism_government_support
+#	}
+#}
+
+# Fascist Coup d'état
+#country_event = {
+#	id = political.9
+#	title = political.9.t
+#	desc = political.9.d
+#	picture = GFX_report_event_national_bolshevism_gathering
+#	
+#	trigger = {
+#		has_idea_with_trait = national_bolshevism_demagogue
+#		NOT = { has_government = national_bolshevism }
+#		has_country_flag = national_bolshevism_government_support
+#		national_bolshevism > 0.3
+#		is_major = no
+#		is_puppet = no
+#	}
+#
+#	mean_time_to_happen = {
+#		days = 100
+#		modifier = {
+#			factor = 0.5
+#			national_bolshevism > 0.4
+#		}
+#	}
+#
+#	immediate = {
+#		hidden_effect = { remove_ideas = national_bolshevism_revolutionaries }
+#	}
+#	
+#	option = {
+#		name = political.9.a
+#		set_politics = {
+#			ruling_party = national_bolshevism
+#			elections_allowed = no
+#		}
+#		add_timed_idea = { idea = reign_of_terror days = 730 }
+#	}
+#}
+
+# Civil War for Fascism
+#country_event = {
+#	id = political.10
+#	title = political.10.t
+#	desc = political.10.d
+#	picture = GFX_report_event_national_bolshevism_gathering
+#	
+#	trigger = {
+#		has_idea_with_trait = national_bolshevism_demagogue
+#		NOT = { has_government = national_bolshevism }
+#		national_bolshevism > 0.25
+#		if = {
+#			limit = {
+#				has_dlc = "Together for Victory"
+#			}
+#			OR = {
+#				NOT = { tag = RAJ }
+#				AND = {
+#					tag = RAJ
+#					NOT = { has_completed_focus = RAJ_swaraj }
+#				}
+#			}
+#		}
+#	}
+#
+#	mean_time_to_happen = {
+#		days = 365
+#		modifier = {
+#			factor = 0.75
+#			has_country_flag = national_bolshevism_popular_movement
+#		}
+#	}
+#	
+#	option = {
+#		name = political.10.a
+#		if = {
+#			limit = {
+#				has_government = monarchohive_mind_
+#			}
+#			if = {
+#				limit = { national_bolshevism > 0.4 }
+#				start_civil_war = {
+#					ruling_party = national_bolshevism
+#					ideology = monarchohive_mind_
+#					size = 0.6
+#				}
+#			}
+#			if = {
+#				limit = { NOT = { national_bolshevism > 0.4 } }
+#				start_civil_war = {
+#					ruling_party = national_bolshevism
+#					ideology = monarchohive_mind_
+#					size = 0.7
+#				}
+#			}
+#		}
+#		if = {
+#			limit = {
+#				has_government = hive_mind_
+#			}
+#			if = {
+#				limit = { national_bolshevism > 0.4 }
+#				start_civil_war = {
+#					ruling_party = national_bolshevism
+#					ideology = hive_mind_
+#					size = 0.6
+#				}
+#			}
+#			if = {
+#				limit = { NOT = { national_bolshevism > 0.4 } }
+#				start_civil_war = {
+#					ruling_party = national_bolshevism
+#					ideology = hive_mind_
+#					size = 0.7
+#				}
+#			}
+#		}
+#		if = {
+#			limit = {
+#				has_government = conservative_socialism
+#			}
+#			if = {
+#				limit = { national_bolshevism > 0.4 }
+#				start_civil_war = {
+#					ruling_party = national_bolshevism
+#					ideology = conservative_socialism
+#					size = 0.6
+#				}
+#			}
+#			if = {
+#				limit = { NOT = { national_bolshevism > 0.4 } }
+#				start_civil_war = {
+#					ruling_party = national_bolshevism
+#					ideology = conservative_socialism
+#					size = 0.7
+#				}
+#			}
+#		}
+#		remove_ideas = national_bolshevism_revolutionaries
+#		add_timed_idea = { idea = reign_of_terror days = 730 }
+#	}
+#	option = {
+#		name = political.10.b
+#	}
+#}
+
+# Fascist Assault Divisions Form
+country_event = {
+	id = political.11
+	title = political.11.t
+	desc = political.11.d
+	picture = GFX_report_event_national_bolshevism_militia
+	
+	trigger = {
+		has_idea_with_trait = national_bolshevism_demagogue
+		NOT = { has_government = national_bolshevism }
+		national_bolshevism > 0.3
+		NOT = { national_bolshevism > 0.59 }
+		NOT = { has_idea = national_bolshevism_assault_divisions }
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			OR = {
+				NOT = { tag = RAJ }
+				AND = {
+					tag = RAJ
+					is_puppet = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_dlc = "Man the Guns"
+			}
+			not = { tag = USA }
+		}
+		NOT = {
+			AND = {
+				tag = SPR
+				has_dlc = "La Resistance"
+			}
+		}
+		NOT = {
+			AND = {
+				has_dlc = "No Step Back"
+				OR = {
+					original_tag = POL
+					original_tag = EST
+					original_tag = LAT
+					original_tag = LIT
+					AND = {
+						original_tag = FIN
+						EST = { has_completed_focus = EST_national_pride_in_finland }
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = { 
+				#has_dlc = "BotB"#TODO
+			}
+			NOT = { original_tag = GRE }
+			NOT = { original_tag = TUR }
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 365
+		modifier = {
+			factor = 0.5
+			has_country_flag = national_bolshevism_popular_movement
+		}
+	}
+	
+	option = {
+		name = political.11.a
+		add_popularity = {
+			ideology = national_bolshevism
+			popularity = 0.05
+		}
+		add_ideas = national_bolshevism_assault_divisions
+	}
+}
+
+# The Threat of Communism
+country_event = {
+	id = political.12
+	title = political.12.t
+	desc = political.12.d
+	picture = GFX_report_event_worker_protests
+	
+	trigger = {
+		has_idea_with_trait = national_bolshevism_demagogue
+		NOT = { has_government = national_bolshevism }
+		national_bolshevism > 0.25
+		NOT = { national_bolshevism > 0.59 }
+		any_neighbor_country = {
+			has_government = hive_mind_
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 365
+		modifier = {
+			factor = 0.5
+			has_country_flag = national_bolshevism_popular_movement
+		}
+	}
+	
+	option = {
+		name = political.12.a
+		add_popularity = {
+			ideology = national_bolshevism
+			popularity = 0.1
+		}
+	}
+}
+
+# Move Towards Democracy
+#country_event = {
+#	id = political.13
+#	title = political.13.t
+#	desc = political.13.d
+#	picture = GFX_report_event_journalists_speech
+#	
+#	is_triggered_only = yes
+#	
+#	trigger = {
+#		NOT = { has_government = monarchohive_mind_ }
+#	}
+
+	# Seek government support
+#	option = {
+#		name = political.13.a
+#		custom_effect_tooltip = political.13.a.tt
+#		clr_country_flag = monarchohive_mind__popular_movement
+#		clr_country_flag = monarchohive_mind__opposition_formed
+#		set_country_flag = monarchohive_mind__political_movement
+#	}
+
+	# Seek popular support
+#	option = {
+#		name = political.13.b
+#		custom_effect_tooltip = political.13.b.tt
+#		clr_country_flag = monarchohive_mind__political_movement
+#		clr_country_flag = monarchohive_mind__government_support
+#		set_country_flag = monarchohive_mind__popular_movement
+#	}
+#}
+
+# [Ruling Party] Debates Democracy
+country_event = {
+	id = political.14
+	title = political.14.t
+	desc = political.14.d
+	picture = GFX_report_event_journalists_speech
+	
+	trigger = {
+		NOT = { has_government = monarchohive_mind_ }
+		monarchohive_mind_ > 0.6
+		NOT = { monarchohive_mind_ > 0.7 }
+		check_has_focus_tree_to_switch_to_monarchohive_mind_ = yes
+		NOT = {
+			AND = {
+				original_tag = SPR
+				has_dlc = "La Resistance"
+			}
+		}
+		NOT = {
+			AND = {
+				has_dlc = "No Step Back"
+				OR = {
+					original_tag = POL
+					original_tag = EST
+					original_tag = LAT
+					original_tag = LIT
+					AND = {
+						original_tag = FIN
+						EST = { has_completed_focus = EST_national_pride_in_finland }
+					}
+				}
+			}
+		}
+
+		NOT = {
+			AND = {
+				has_dlc = "Battle for the Bosporus"
+				OR = {
+					original_tag = GRE
+					original_tag = TUR
+				}
+			}
+		}
+	}
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+#	option = {
+#		name = political.14.a
+#		custom_effect_tooltip = political.14.a.tt
+#		clr_country_flag = monarchohive_mind__political_movement
+#		set_country_flag = monarchohive_mind__government_support
+#	}
+
+	# We need a referendum
+	option = {
+		name = political.14.c
+		add_political_power = -100
+		set_politics = {
+			ruling_party = monarchohive_mind_
+			elections_allowed = yes
+		}
+	}
+
+	# Not right now
+	option = {
+		name = political.14.e
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip = impending_civil_war_tt
+	}
+}
+
+# Democratic Opposition Forming
+country_event = {
+	id = political.15
+	title = political.15.t
+	desc = political.15.d
+	picture = GFX_report_event_journalists_speech
+	
+	trigger = {
+		has_idea_with_trait = monarchohive_mind__reformer
+		NOT = { has_government = monarchohive_mind_ }
+		NOT = { has_country_flag = monarchohive_mind__opposition_formed }
+		is_puppet = no
+		NOT = { monarchohive_mind_ > 0.59 }
+		NOT = {
+			AND = {
+				has_dlc = "No Step Back"
+				OR = {
+					original_tag = POL
+					original_tag = EST
+					original_tag = LAT
+					original_tag = LIT
+					AND = {
+						original_tag = FIN
+						EST = { has_completed_focus = EST_national_pride_in_finland }
+					}
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				has_dlc = "Battle for the Bosporus"
+				OR = {
+					original_tag = GRE
+					original_tag = TUR
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 300
+		modifier = {
+			factor = 0.5
+			has_country_flag = monarchohive_mind__popular_movement
+		}
+	}
+	
+	option = {
+		name = political.15.a
+		add_popularity = {
+			ideology = monarchohive_mind_
+			popularity = 0.05
+		}
+		add_stability = -0.05
+		set_country_flag = monarchohive_mind__opposition_formed
+	}
+}
+
+# Public Call for Elections
+country_event = {
+	id = political.16
+	title = political.16.t
+	desc = political.16.d
+	picture = GFX_report_event_election_vote
+	
+	trigger = {
+		has_idea_with_trait = monarchohive_mind__reformer
+		NOT = { has_government = monarchohive_mind_ }
+		has_country_flag = monarchohive_mind__opposition_formed
+		NOT = { has_idea = monarchohive_mind__opposition_voicing_protests }
+		NOT = {
+			AND = {
+				has_dlc = "No Step Back"
+				OR = {
+					original_tag = POL
+					original_tag = EST
+					original_tag = LAT
+					original_tag = LIT
+					AND = {
+						original_tag = FIN
+						EST = { has_completed_focus = EST_national_pride_in_finland }
+					}
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				has_dlc = "Battle for the Bosporus"
+				OR = {
+					original_tag = GRE
+					original_tag = TUR
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 150
+	}
+	
+	option = {
+		name = political.16.a
+
+		ai_chance = {
+			base = 1
+		}
+	}
+
+	option = {
+		name = political.16.b
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_dlc = "Battle for the Bosporus"
+				original_tag = BUL
+			}
+		}
+
+		add_political_power = -20
+		add_ideas = monarchohive_mind__opposition_voicing_protests
+		add_timed_idea = { idea = monarchohive_mind__opposition_voicing_protests days = 730 }
+	}
+}
+
+#country_event = {
+#	id = political.17
+#	title = political.17.t
+#	desc = political.17.d
+#	picture = GFX_report_event_election_vote
+#	
+#	trigger = {
+#		has_idea_with_trait = monarchohive_mind__reformer
+#		NOT = { has_government = monarchohive_mind_ }
+#		monarchohive_mind_ > 0.5
+#		has_country_flag = monarchohive_mind__government_support
+#		is_puppet = no
+#	}
+#	
+#	mean_time_to_happen = {
+#		days = 200
+#	}
+#	
+#	option = {
+#		name = political.17.a
+#		if = {
+#			limit = { has_government = national_bolshevism }
+#			add_timed_idea = { idea = national_bolshevism_defeated days = 730 }
+#		}
+#		if = {
+#			limit = { has_government = hive_mind_ }
+#			add_timed_idea = { idea = hive_mind__defeated days = 730 }
+#		}
+#		set_politics = {
+#			ruling_party = monarchohive_mind_
+#			elections_allowed = yes
+#		}
+#		hold_election = ROOT
+#		remove_ideas = monarchohive_mind__revolutionaries
+#	}
+#	option = {
+#		name = political.17.b
+#	}
+#}
+
+### > 50% support
+# political.18 Fascist
+
+country_event = {
+	id = political.18
+	title = political.18.t
+	desc = political.18.d
+	picture = GFX_report_event_national_bolshevism_gathering
+
+	is_triggered_only = yes
+
+	#trigger = {
+	#	national_bolshevism > 0.5
+	#	NOT = { has_government = national_bolshevism }
+	#	NOT = { has_idea = national_bolshevism_revolutionaries }
+	#	NOT = { has_idea = reign_of_terror }
+	#	is_puppet = no
+	#	has_civil_war = no
+	#}
+
+	#mean_time_to_happen = {
+	#	days = 30
+	#}
+
+	#option = {
+	#	name = political.18.a
+	#	add_political_power = -100
+	#	add_popularity = {
+	#		ideology = national_bolshevism
+	#		popularity = -0.10
+	#	}
+	#	add_timed_idea = {
+	#		idea = national_bolshevism_revolutionaries
+	#		days = 365
+	#	}
+	#}
+
+	#option = {
+	#	name = political.18.b
+	#	add_timed_idea = {
+	#		idea = national_bolshevism_revolutionaries
+	#		days = 365
+	#	}
+	#}
+
+	option = {
+		name = political.18.c
+		set_politics = {
+			ruling_party = national_bolshevism
+			elections_allowed = no
+		}
+		add_stability = -0.05
+	}
+}
+
+# political.19 Communist
+
+country_event = {
+	id = political.19
+	title = political.19.t
+	desc = political.19.d
+	picture = GFX_report_event_worker_protests
+
+	is_triggered_only = yes
+
+	#trigger = {
+	#	hive_mind_ > 0.5
+	#	NOT = { has_government = hive_mind_ }
+	#	NOT = { has_idea = hive_mind__revolutionaries }
+	#	NOT = { has_idea = reign_of_terror }
+	#	is_puppet = no
+	#	has_civil_war = no
+	#}
+
+	#mean_time_to_happen = {
+	#	days = 30
+	#}
+
+	#option = {
+	#	name = political.19.a
+	#	add_political_power = -100
+	#	add_popularity = {
+	#		ideology = hive_mind_
+	#		popularity = -0.10
+	#	}
+	#	add_timed_idea = {
+	#		idea = hive_mind__revolutionaries
+	#		days = 365
+	#	}
+	#}
+
+	#option = {
+	#	name = political.19.b
+	#	add_timed_idea = {
+	#		idea = hive_mind__revolutionaries
+	#		days = 365
+	#	}
+	#}
+
+	option = {
+		name = political.19.c
+		trigger = {
+			#Special case CHI PRC
+			OR = {
+				NOT = { tag = CHI }
+				AND = {
+					NOT = { country_exists = PRC }
+					tag = CHI
+				}			
+			}
+		}
+		set_politics = {
+			ruling_party = hive_mind_
+			elections_allowed = no
+		}
+		add_stability = -0.05
+	}
+}
+
+# political.20 Democratic
+
+country_event = {
+	id = political.20
+	title = political.20.t
+	desc = political.20.d
+	picture = GFX_report_event_journalists_speech
+
+	is_triggered_only = yes
+
+	#trigger = {
+	#	monarchohive_mind_ > 0.5
+	#	NOT = { has_government = monarchohive_mind_ }
+	#	NOT = { has_idea = monarchohive_mind__revolutionaries }
+	#	NOT = { has_idea = reign_of_terror }
+	#	is_puppet = no
+	#	has_civil_war = no
+	#}
+
+	#mean_time_to_happen = {
+	#	days = 30
+	#}
+
+	#option = {
+	#	name = political.20.a
+	#	add_political_power = -100
+	#	add_popularity = {
+	#		ideology = monarchohive_mind_
+	#		popularity = -0.10
+	#	}
+	#	add_timed_idea = {
+	#		idea = monarchohive_mind__revolutionaries
+	#		days = 365
+	#	}
+	#}
+
+	#option = {
+	#	name = political.20.b
+	#	add_timed_idea = {
+	#		idea = monarchohive_mind__revolutionaries
+	#		days = 365
+	#	}
+	#}
+
+	option = {
+		name = political.20.c
+		if = {
+			limit = { has_government = national_bolshevism }
+			add_timed_idea = { idea = national_bolshevism_defeated days = 730 }
+		}
+		if = {
+			limit = { has_government = hive_mind_ }
+			add_timed_idea = { idea = hive_mind__defeated days = 730 }
+		}
+		set_politics = {
+			ruling_party = monarchohive_mind_
+			elections_allowed = yes
+		}
+		add_stability = -0.05
+	}
+}
+
+
+### Revolution
+# political.21 Fascist
+country_event = {
+	id = political.21
+	title = political.21.t
+	desc = political.21.d
+	picture = GFX_report_event_national_bolshevism_militia
+
+	trigger = {
+		national_bolshevism > 0.7
+		num_of_controlled_states > 1
+		#has_idea = national_bolshevism_revolutionaries
+		NOT = { has_government = national_bolshevism }
+		has_civil_war = no
+		check_has_focus_tree_to_switch_to_national_bolshevism = yes
+		NOT = {
+			AND = {
+				original_tag = SPR
+				has_dlc = "La Resistance"
+			}
+		}
+		NOT = {
+			AND = {
+				has_dlc = "No Step Back"
+				OR = {
+					original_tag = POL
+					original_tag = EST
+					original_tag = LAT
+					original_tag = LIT
+					AND = {
+						original_tag = FIN
+						EST = { has_completed_focus = EST_national_pride_in_finland }
+					}
+				}
+			}
+		}
+
+		NOT = {
+			AND = {
+				has_dlc = "Battle for the Bosporus"
+				OR = {
+					original_tag = GRE
+					original_tag = TUR
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	immediate = {
+		hidden_effect = { remove_ideas = national_bolshevism_revolutionaries }
+	}
+
+	option = {
+		name = political.21.a
+		ai_chance = {
+			factor = 0
+		}
+		start_civil_war = {
+			ideology = national_bolshevism
+			size = 0.5
+		}
+	}
+
+	option = {
+		name = political.21.b
+		ai_chance = {
+			factor = 0
+		}
+		if = {
+			limit = {
+				has_government = monarchohive_mind_
+			}
+			start_civil_war = {
+				ruling_party = national_bolshevism
+				ideology = monarchohive_mind_
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = hive_mind_
+			}
+			start_civil_war = {
+				ruling_party = national_bolshevism
+				ideology = hive_mind_
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = conservative_socialism
+			}
+			start_civil_war = {
+				ruling_party = national_bolshevism
+				ideology = conservative_socialism
+				size = 0.5
+			}
+		}
+	}
+
+	# We need a referendum
+	option = {
+		name = political.14.c
+		trigger = {
+			is_ai = yes
+		}
+		add_political_power = -100
+		set_politics = {
+			ruling_party = national_bolshevism
+			elections_allowed = no
+		}
+	}
+}
+# political.22 Communist
+country_event = {
+	id = political.22
+	title = political.22.t
+	desc = political.22.d
+	picture = GFX_report_event_worker_protests
+
+	trigger = {
+		hive_mind_ > 0.7
+		num_of_controlled_states > 1
+		#has_idea = hive_mind__revolutionaries
+		NOT = { has_government = hive_mind_ }
+		#Special case CHI PRC
+		OR = {
+			NOT = { tag = CHI }
+			AND = {
+				NOT = { country_exists = PRC }
+				tag = CHI
+			}			
+		}
+		NOT = {
+			AND = {
+				original_tag = USA
+				has_dlc = "Man the Guns"
+			}
+		}
+		NOT = {
+			AND = {
+				has_dlc = "No Step Back"
+				OR = {
+					original_tag = POL
+					original_tag = EST
+					original_tag = LAT
+					original_tag = LIT
+					AND = {
+						original_tag = FIN
+						EST = { has_completed_focus = EST_national_pride_in_finland }
+					}
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				has_dlc = "Battle for the Bosporus"
+				OR = {
+					original_tag = GRE
+					original_tag = TUR
+				}
+			}
+		}
+		has_civil_war = no
+		check_has_focus_tree_to_switch_to_hive_mind_ = yes
+		NOT = {
+			AND = {
+				original_tag = SPR
+				has_dlc = "La Resistance"
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	immediate = {
+		hidden_effect = { remove_ideas = hive_mind__revolutionaries }
+	}
+
+	option = {
+		name = political.22.a
+		ai_chance = {
+			factor = 0
+		}
+		start_civil_war = {
+			ideology = hive_mind_
+			size = 0.5
+		}
+	}
+
+	option = {
+		name = political.22.b
+		ai_chance = {
+			factor = 0
+		}
+		if = {
+			limit = {
+				has_government = monarchohive_mind_
+			}
+			start_civil_war = {
+				ruling_party = hive_mind_
+				ideology = monarchohive_mind_
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = national_bolshevism
+			}
+			start_civil_war = {
+				ruling_party = hive_mind_
+				ideology = national_bolshevism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = conservative_socialism
+			}
+			start_civil_war = {
+				ruling_party = hive_mind_
+				ideology = conservative_socialism
+				size = 0.5
+			}
+		}
+	}
+
+	# We need a referendum
+	option = {
+		name = political.14.c
+		trigger = {
+			is_ai = yes
+		}
+		add_political_power = -100
+		set_politics = {
+			ruling_party = hive_mind_
+			elections_allowed = no
+		}
+	}
+}
+# political.23 Democratic
+country_event = {
+	id = political.23
+	title = political.23.t
+	desc = political.23.d
+	picture = GFX_report_event_gathering_protest
+
+	trigger = {
+		monarchohive_mind_ > 0.7
+		num_of_controlled_states > 1
+		#has_idea = monarchohive_mind__revolutionaries
+		#Special case CHI PRC
+		NOT = { has_government = monarchohive_mind_ }
+		OR = {
+			NOT = { tag = CHI }
+			AND = {
+				NOT = { country_exists = PRC }
+				tag = CHI
+			}			
+		}
+		NOT = {
+			AND = {
+				has_dlc = "No Step Back"
+				OR = {
+					original_tag = POL
+					original_tag = EST
+					original_tag = LAT
+					original_tag = LIT
+					AND = {
+						original_tag = FIN
+						EST = { has_completed_focus = EST_national_pride_in_finland }
+					}
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				has_dlc = "Battle for the Bosporus"
+				OR = {
+					original_tag = GRE
+					original_tag = TUR
+				}
+			}
+		}
+		has_civil_war = no
+		check_has_focus_tree_to_switch_to_monarchohive_mind_ = yes
+		NOT = {
+			AND = {
+				original_tag = SPR
+				has_dlc = "La Resistance"
+	}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	immediate = {
+		hidden_effect = { remove_ideas = monarchohive_mind__revolutionaries }
+	}
+
+	option = {
+		name = political.23.a
+		ai_chance = {
+			factor = 0
+		}
+		start_civil_war = {
+			ideology = monarchohive_mind_
+			size = 0.5
+		}
+	}
+
+	option = {
+		name = political.23.b
+		ai_chance = {
+			factor = 0
+		}
+		if = {
+			limit = {
+				has_government = conservative_socialism
+			}
+			start_civil_war = {
+				ruling_party = monarchohive_mind_
+				ideology = conservative_socialism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = national_bolshevism
+			}
+			add_timed_idea = { idea = national_bolshevism_defeated days = 730 }			
+			start_civil_war = {
+				ruling_party = monarchohive_mind_
+				ideology = national_bolshevism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = hive_mind_
+			}
+			add_timed_idea = { idea = hive_mind__defeated days = 730 }
+			start_civil_war = {
+				ruling_party = monarchohive_mind_
+				ideology = hive_mind_
+				size = 0.5
+			}
+		}
+	}
+
+	# We need a referendum
+	option = {
+		name = political.14.c
+		trigger = {
+			is_ai = yes
+		}
+		add_political_power = -100
+		set_politics = {
+			ruling_party = monarchohive_mind_
+			elections_allowed = yes
+		}
+	}
+}
+
+### Suppressed
+# political.24 Fascist
+country_event = {
+	id = political.24
+	title = political.24.t
+	desc = political.24.d
+	picture = GFX_report_event_national_bolshevisms_posing
+
+	trigger = {
+		national_bolshevism < 0.3
+		has_idea = national_bolshevism_revolutionaries
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = political.24.a
+		remove_ideas = national_bolshevism_revolutionaries
+	}
+}
+# political.25 Communist
+country_event = {
+	id = political.25
+	title = political.25.t
+	desc = political.25.d
+	picture = GFX_report_event_stalin_propaganda
+
+	trigger = {
+		hive_mind_ < 0.3
+		has_idea = hive_mind__revolutionaries
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = political.25.a
+		remove_ideas = hive_mind__revolutionaries
+	}
+}
+# political.26 Democratic
+country_event = {
+	id = political.26
+	title = political.26.t
+	desc = political.26.d
+	picture = GFX_report_event_europe_funeral
+
+	trigger = {
+		monarchohive_mind_ < 0.3
+		has_idea = monarchohive_mind__revolutionaries
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = political.26.a
+		remove_ideas = monarchohive_mind__revolutionaries
+	}
+}
+
+# Remove neutral foreign policy if national_bolshevism or commie
+country_event = {
+	id = political.27
+	title = political.27.t
+	desc = { 
+		text = political.27.d_national_bolshevism
+	 	trigger = { has_government = national_bolshevism }
+	}
+	desc = { 
+		text = political.27.d_hive_mind_
+	 	trigger = { has_government = hive_mind_ }
+	}
+	picture = GFX_report_event_journalists_speech
+
+	trigger = {
+		OR = {
+			has_government = national_bolshevism
+			has_government = hive_mind_
+		}
+		has_idea = conservative_socialism_idea
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = political.27.a
+		remove_ideas = conservative_socialism_idea
+	}
+}
+
+# Country has same ideology as revolter
+country_event = {
+	id = political.28
+	title = political.28.t
+	desc = political.28.d
+
+	picture = GFX_report_event_journalists_speech
+
+	trigger = {
+		is_subject = no
+		has_civil_war = yes
+		NOT = { has_country_flag = ENG_hive_mind__civil_war }
+		NOT = {
+			AND = {
+				has_dlc = "La Resistance"
+				original_tag = SPR
+				SPR_scw_in_progress = yes
+			}
+			AND = {
+				has_dlc = "La Resistance"
+				original_tag = POR
+				has_global_flag = SPR_portuguese_anarchism_flag
+			}
+			AND = {
+				has_dlc = "Battle for the Bosporus"
+				original_tag = BUL
+				OR = {
+					has_country_flag = BUL_zveno_coup_flag
+					has_country_flag = BUL_zveno_bulgaria_flag
+				}
+			}
+			AND = {
+				has_dlc = "No Step Back"
+				OR = {
+					original_tag = POL
+					original_tag = EST
+					original_tag = LAT
+					original_tag = LIT
+					original_tag = ROM
+					AND = {
+						original_tag = FIN
+						EST = { has_completed_focus = EST_national_pride_in_finland }
+					}
+					original_tag = BLR #Baltic Belarus civil war
+				}
+			}
+			AND = {
+				original_tag = SOV
+				has_global_flag = SOV_soviet_civil_war # Stalin doesn't really want to reconciliate with Trotsky/Bukharin at this point
+			}
+			AND = {
+				has_dlc = "Battle for the Bosporus"
+				original_tag = TUR
+			}
+		}
+		any_other_country = {
+			NOT = { tag = ROOT }
+			original_tag = ROOT
+			is_subject = no
+			has_government = ROOT
+			has_war_with = ROOT
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = political.28.a
+		random_other_country = {
+			limit = {
+				original_tag = ROOT
+				NOT = { tag = ROOT }
+			}
+			ROOT = { annex_country = { target = PREV transfer_troops = yes } }
+		}
+	}
+}

@@ -1,0 +1,13 @@
+bookmarks = {
+	bookmark = {
+		name = "the_disaster_name"
+		desc = "the_disaster_desc"
+		date = 2000.1.1.12
+	picture = "the_disaster-1"
+		default_country = "KLY"
+		default = yes
+		"" = {
+			history = "the_disaster_"
+		}
+	}
+}

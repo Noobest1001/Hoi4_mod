@@ -1,0 +1,27 @@
+ideologies = {
+	national_bolshevism = {
+		types = {
+			national_bolshevism_ = { can_be_randomly_selected = no }
+		}
+		dynamic_faction_names = {
+			"faction_national_bolshevism_the_national_bolshevik_front_"
+			"faction_national_bolshevism_the_bolshevik_liberation_front"
+		}
+		color = { 254 0 0 }
+		war_impact_on_world_tension = -25
+		faction_modifiers = {
+			faction_impact_on_world_tension = -50
+		}
+		rules = {
+			can_create_collaboration_government = yes
+			can_declare_war_on_same_ideology = yes
+			can_puppet = yes
+		}
+		modifiers = {
+			join_faction_tension = -10
+			lend_lease_tension = 3.9
+			annex_cost_factor = -30
+		}
+		ai_neutral = yes
+	}
+}

@@ -1,0 +1,11 @@
+ideas = {
+	country = {
+
+		IDSI_discredited_government = {
+			picture = IDSI_discredited_government-379291
+			traits = {
+				 dictator
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+characters = {
+#Create country leader - The Mind
+the_mind = {
+	name = the_mind
+	portraits = {
+		civilian = {
+			#Custom image for The Mind
+			large = "/gfx/leaders/HIV/PMbOxNBL-9407.dds"
+		}
+	}
+	country_leader = {
+		expire = "1.1.2014"
+		ideology = hivemind_collectivism
+		traits = {  }
+	}
+}
+}

@@ -1,0 +1,28 @@
+characters = {	HIM_the_right_mind = {
+		name = HIM_the_right_mind
+		portraits = {
+			army = {
+			small = "gfx/interface/ideas/hive-mind-ideas/HIM_the_right_mind-359612.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = him_the_right_mind
+			cost = 11
+			removal_cost = 1
+		}
+	}
+	HIM_coetus_rebellium = {
+		name = HIM_coetus_rebellium
+		portraits = {
+			army = {
+			small = "gfx/interface/ideas/hive-mind-ideas/HIM_coetus_rebellium-183139.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = him_coetus_rebellium
+			cost = 1
+			removal_cost = 1
+		}
+	}

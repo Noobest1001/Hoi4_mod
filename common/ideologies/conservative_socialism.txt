@@ -1,0 +1,24 @@
+ideologies = {
+	conservative_socialism = {
+		types = {
+			zcFLjHgm = { can_be_randomly_selected = no }
+		}
+		dynamic_faction_names = {
+			"faction_conservative_socialism_the_democratic_socialist_bloc"
+			"faction_conservative_socialism_the_conservative_socialist_syndicate_"
+			"faction_conservative_socialism_the_left_democratic_pact"
+		}
+		color = { 255 27 36 }
+		can_collaborate = yes
+		faction_modifiers = {
+		}
+		rules = {
+			can_create_collaboration_government = yes
+			can_send_volunteers = yes
+			can_puppet = yes
+		}
+		modifiers = {
+		}
+		ai_neutral = yes
+	}
+}

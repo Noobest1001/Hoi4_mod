@@ -1,0 +1,37 @@
+synthetic_resource_initiative = {
+	oil_resource_initiative = {
+		icon = decision_icon_oil_resource_initiative
+		cost = 150
+		days_remove = 90
+		days_re_enable = 15
+		available = {
+			has_completed_focus = Synthetic_Resource_initiative 
+
+
+		}
+	}
+	steel_resource_initiative = {
+		icon = decision_icon_steel_resource_initiative
+		cost = 150
+		days_remove = 90
+		days_re_enable = 15
+		available = {
+			has_decision = Oil_Resource_initiative 
+
+
+		}
+	}
+	chromium_resource_initiative = {
+		icon = decision_icon_chromium_resource_initiative
+		cost = 150
+		days_remove = 90
+		days_re_enable = 15
+		available = {
+			NOT = {    OR = {has_decision = Steel_Resource_initiative 
+
+has_decision = Oil_Resource_initiative
+
+
+		}
+	}
+}

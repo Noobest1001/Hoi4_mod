@@ -1,0 +1,137 @@
+add_namespace = ROL_the_republic_of_lycojo
+
+#The First Article
+country_event = {
+	id = ROL_the_republic_of_lycojo.1
+	title = ROL_the_republic_of_lycojo.1.t
+	desc = ROL_the_republic_of_lycojo.1.d
+
+	picture = ROL_the_first_article-563
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		date < 1983.01.01
+
+
+	}
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 7
+	option = {
+		name = ROL_the_republic_of_lycojo.1.a
+		trigger = {
+			always = yes
+
+
+		}
+		ai_chance = { factor = 40 }
+		add_ideas = controlled_news
+
+
+
+
+		hidden_effect = {
+			add_stability = -0.05
+
+
+		}
+	}
+	option = {
+		name = ROL_the_republic_of_lycojo.1.b
+		trigger = {
+			always = yes
+
+		}
+		ai_chance = { factor = 40 }
+		add_idea = nationalized_press
+
+
+
+
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = ROL_the_republic_of_lycojo.1.c
+		trigger = {
+			always = yes
+
+
+		}
+		ai_chance = { factor = 40 }
+		add_idea = freedom_in_the_press
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#The Second Article
+country_event = {
+	id = ROL_the_republic_of_lycojo.2
+	title = ROL_the_republic_of_lycojo.2.t
+	desc = ROL_the_republic_of_lycojo.2.d
+
+	picture = ROL_the_second_article-568
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = ROL_the_republic_of_lycojo.2.a
+		trigger = {
+			always = yes
+		}
+		ai_chance = { factor = 34 }
+		
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = ROL_the_republic_of_lycojo.2.b
+		trigger = {
+			always = yes
+		}
+		ai_chance = { factor = 40 }
+		
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = ROL_the_republic_of_lycojo.2.c
+		trigger = {
+			always = yes
+
+		}
+		ai_chance = { factor = 40 }
+		
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = ROL_the_republic_of_lycojo.2.d
+		trigger = {
+			always = yes
+
+
+		}
+		ai_chance = { factor = 40 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#The Third Article
+country_event = {
+	id = ROL_the_republic_of_lycojo.3
+	title = ROL_the_republic_of_lycojo.3.t
+	desc = ROL_the_republic_of_lycojo.3.d
+
+	picture = ROL_the_third_article-563
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 2 }
+	timeout_days = 7
+}

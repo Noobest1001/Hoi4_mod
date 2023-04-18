@@ -1,0 +1,36 @@
+add_namespace = IDS_ideological_shifts
+
+#A Growing movement towards Hive mind-ism
+country_event = {
+	id = IDS_ideological_shifts.1
+	title = IDS_ideological_shifts.1.t
+	desc = IDS_ideological_shifts.1.d
+
+	picture = IDS_a_growing_movement_towards_hive_mindism-474
+	trigger = {
+		hive_mind_ > 0.05
+
+NOT = {
+	has_government = hive_mind_
+
+
+}
+
+
+	}
+	mean_time_to_happen = { days = 5 }
+	timeout_days = 7
+	option = {
+		name = IDS_ideological_shifts.1.a
+		trigger = {
+			always = yes
+
+
+		}
+		ai_chance = { factor = 40 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}

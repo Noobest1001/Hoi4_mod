@@ -1,0 +1,32 @@
+
+is_enemy_ideology = {
+	OR = {
+		AND = {
+			has_government = hive_mind_
+			ROOT = {
+				OR = {
+					has_government = national_bolshevism
+					has_government = monarchohive_mind_
+				}
+			}
+		}
+		AND = {
+			has_government = monarchohive_mind_
+			ROOT = {
+				OR = {
+					has_government = hive_mind_
+					has_government = national_bolshevism
+				}
+			}
+		}
+		AND = {
+			has_government = national_bolshevism
+			ROOT = {
+				OR = {
+					has_government = monarchohive_mind_
+					has_government = hive_mind_
+				}
+			}
+		}
+	}
+}

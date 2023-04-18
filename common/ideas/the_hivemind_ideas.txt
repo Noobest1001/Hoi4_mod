@@ -1,0 +1,63 @@
+ideas = {
+	mobilization_laws = {
+		hive_mind_general_mobilization_ = {
+			allowed = {
+				tag = HIV
+			}
+			traits = { dictator}
+			picture = "vgXlmAxi-153958"
+		}
+		hive_mind_mass_mobilization_ = {
+			allowed = {
+				tag = HIV
+			}
+			traits = { dictator}
+			picture = "knuAEXcD-158679"
+		}
+		hive_mind_mass_industrialization_ = {
+			allowed = {
+				tag = HIV
+			}
+			traits = { dictator}
+			picture = "KXEFWgoi-154626"
+		}
+		hive_mind_war_recovery = {
+			allowed = {
+				tag = HIV
+			}
+			traits = { dictator}
+			picture = "cOXUBTmp-354882"
+		}
+		hive_mind_no_mobilization_ = {
+			allowed = {
+				tag = HIV
+			}
+			traits = { dictator}
+			picture = "jueAaEVs-345231"
+		}
+}
+	economy = {
+}
+	political_advisor = {
+}
+	tank_manufacturer = {
+}
+	naval_manufacturer = {
+}
+	aircraft_manufacturer = {
+}
+	materiel_manufacturer = {
+}
+	industrial_concern = {
+}
+	theorist = {
+}
+	army_chief = {
+}
+	navy_chief = {
+}
+	air_chief = {
+}
+	high_command = {
+}
+}

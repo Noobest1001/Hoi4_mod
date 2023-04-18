@@ -1,0 +1,10 @@
+synthetic_resource_initiative = {
+	allowed = {
+		has_completed_focus = Synthetic_Resource_initiative 
+
+
+	}
+	visible = {
+		d
+	}
+}

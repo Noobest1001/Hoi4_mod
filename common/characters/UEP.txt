@@ -1,0 +1,17 @@
+characters = {
+#Create country leader - Eddy "Rome" Nolan
+eddyromenolan = {
+	name = eddyromenolan
+	portraits = {
+		civilian = {
+			#Custom image for Eddy "Rome" Nolan
+			large = "/gfx/leaders/UEP/FWLGQNED-1.dds"
+		}
+	}
+	country_leader = {
+		expire = "1965.1.1"
+		ideology = monarchocommunist
+		traits = {  }
+	}
+}
+}
