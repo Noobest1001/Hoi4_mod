@@ -9,7 +9,7 @@ ideologies = {
 			hivemind_voluntarism = { can_be_randomly_selected = no }
 		}
 		dynamic_faction_names = {
-			"faction_hive_mind__the_hive_"
+			"faction_hive_mind__the_hive"
 			"faction_hive_mind__the_bees"
 		}
 		color = { 191 0 0 }

@@ -5,19 +5,22 @@ ideologies = {
             Liberal_Corpritism = {can_be_randomly_selected = no}
             Democratic_Liberalism = {can_be_randomly_selected = yes}
             National_Liberalism = {can_be_randomly_selected = yes}
+			Liberal_Socialism = {can_be_randomly_selected = yes}
+			Concervitive_Liberalism = {can_be_randomly_selected = yes}
 		}
 		dynamic_faction_names = {
 			"faction_antirevisionism_The_Liberal_Union"
 			"faction_antirevisionism_The_Left_Democratic_Federation"
 		}
-		color = { 237 0 22 }
+		color = { 213 168 0 }
 		faction_modifiers = {
+			faction_impact_on_world_tension = 10
 		}
 		rules = {
 			can_create_collaboration_government = yes
 			can_declare_war_on_same_ideology = yes
 			can_send_volunteers = yes
-			can_puppet = yes
+			can_puppet = no
 		}
 		modifiers = {
 		}
