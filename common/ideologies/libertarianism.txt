@@ -23,6 +23,18 @@ ideologies = {
 			can_puppet = no
 		}
 		modifiers = {
+			join_faction_tension = 95
+			lend_lease_tension = 100
+			send_volunteers_tension = 100
+			guarantee_tension = 95
+			annex_cost_factor = 50
+			civilian_intel_to_others = 25
+			army_intel_to_others = 15
+			navy_intel_to_others = 15
+			airforce_intel_to_others = 15
+			justify_war_goal_when_in_major_war_time = -85
+			increased_influence_factor = 25
+			drift_defence_factor = -10
 		}
 		ai_neutral = yes
 	}
