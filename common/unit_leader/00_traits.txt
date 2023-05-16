@@ -1,5 +1,15 @@
 leader_traits = {
 #waffle more background traits
+
+	too_smart = {
+		type = land
+		trait_type = personality_trait
+
+		modifier = {
+			
+		}
+	}
+
 	lucky = { 
 		type = land
 		trait_type = personality_trait
