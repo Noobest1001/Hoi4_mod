@@ -9,8 +9,8 @@ ideologies = {
 			hivemind_voluntarism = { can_be_randomly_selected = no }
 		}
 		dynamic_faction_names = {
-			"faction_hive_mind__the_hive"
-			"faction_hive_mind__the_bees"
+			"faction_socialist_anarchism_the_anarchocommune_bloc"
+            "faction_socialist_the_anarchist_{continent.adjective}_defence_council 
 		}
 		color = { 191 0 0 }
 		war_impact_on_world_tension = -50
