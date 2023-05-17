@@ -4,7 +4,7 @@ The_Wokers_party_of_[ETH.GetName]
 The_Revolutionary_Communist_party_of_[ETH.GetName]
 [ETH.GetName]_Communist_party
 The_Popular_Front_for_the_Liberation_of_[ETH.GetName]
-The_Democratic_Front_for_the_Loberation_of_[ETH.GetName]
+The_Democratic_Front_for_the_Liberation_of_[ETH.GetName]
 The_Progressive_Party_of_Working_People
 Party_of_Communist_of_the_[ETH.GetName]
 The_Party_of_Labor_of_[ETH.GetName]
